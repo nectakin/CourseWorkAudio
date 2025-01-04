@@ -1,4 +1,4 @@
-package org.example.swing;
+package org.example.logs;
 
 import java.util.ArrayList;
 import java.util.HashMap;

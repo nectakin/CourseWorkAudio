@@ -1,4 +1,4 @@
-package org.example.swing;
+package org.example.logs;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -1,4 +1,4 @@
-package org.example.swing;
+package org.example.logs;
 
 public interface Subscriber {
     public void update();
