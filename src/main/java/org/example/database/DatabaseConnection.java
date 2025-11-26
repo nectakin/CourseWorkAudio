@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     private static final String URL = "jdbc:sqlite:audio_editor.db";
-    private static Connection connection;
 
     private DatabaseConnection() {}
 

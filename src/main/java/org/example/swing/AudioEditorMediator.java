@@ -1,4 +1,5 @@
 package org.example.swing;
+
 import org.example.converter.AudioFlacConverter;
 import org.example.converter.AudioMp3Converter;
 import org.example.converter.AudioOggConverter;
@@ -70,28 +71,34 @@ class AudioEditorMediator implements UIMediator {
         }
     }
 
+    
     private void convertAudio(String format) {
         if (selectedFile == null) {
             JOptionPane.showMessageDialog(null, "Please load a file first.");
             return;
         }
 
-        AudioAdapter adapter = createAudioAdapter(selectedFile);
+        
+        Audiotrack source = createAudiotrack(selectedFile);
+
         File convertedFile;
         switch (format) {
             case "mp3":
-                convertedFile = AudioMp3Converter.getInstance().convertTo(new Mp3(adapter.adaptFile().getAbsolutePath()));
+                convertedFile = AudioMp3Converter.getInstance().convertTo(source);
                 break;
             case "ogg":
-                convertedFile = AudioOggConverter.getInstance().convertTo(new Ogg(adapter.adaptFile().getAbsolutePath()));
+                convertedFile = AudioOggConverter.getInstance().convertTo(source);
                 break;
             case "flac":
-                convertedFile = AudioFlacConverter.getInstance().convertTo(new Flac(adapter.adaptFile().getAbsolutePath()));
+                convertedFile = AudioFlacConverter.getInstance().convertTo(source);
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported format: " + format);
         }
-        JOptionPane.showMessageDialog(null, "File converted to " + format.toUpperCase() + " successfully!");
+
+        JOptionPane.showMessageDialog(null,
+                "File converted to " + format.toUpperCase() + " successfully!\n"
+                        + (convertedFile != null ? convertedFile.getAbsolutePath() : ""));
     }
 
     private void displayWaveform(File audioFile) {
@@ -100,11 +107,6 @@ class AudioEditorMediator implements UIMediator {
         waveformPanel.add(new AudioWaveformPanel(audioFile), BorderLayout.CENTER);
         waveformPanel.revalidate();
         waveformPanel.repaint();
-    }
-
-    private AudioAdapter createAudioAdapter(File file) {
-        Audiotrack audiotrack = createAudiotrack(file);
-        return new AudioAdapter(audiotrack);
     }
 
     private Audiotrack createAudiotrack(File file) {

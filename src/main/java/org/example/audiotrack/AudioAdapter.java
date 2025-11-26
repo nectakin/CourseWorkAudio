@@ -1,6 +1,6 @@
 package org.example.audiotrack;
 
-import it.sauronsoftware.jave.AudioAttributes;
+import ws.schild.jave.encode.AudioAttributes;
 
 import java.io.File;
 
@@ -19,4 +19,3 @@ public class AudioAdapter{
         return audiotrack.getFileLink();
     }
 }
-

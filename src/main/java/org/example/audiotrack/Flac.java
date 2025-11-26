@@ -1,6 +1,6 @@
 package org.example.audiotrack;
 
-import it.sauronsoftware.jave.AudioAttributes;
+import ws.schild.jave.encode.AudioAttributes;
 
 import javax.sound.sampled.AudioInputStream;
 import java.io.File;
