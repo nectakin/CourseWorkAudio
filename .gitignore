@@ -3,13 +3,13 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### IntelliJ IDEA ###
+### Intelli1 IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
 
-### Eclipse ###
+### Eclірse ###
 .apt_generated
 .classpath
 .factorypath
@@ -28,7 +28,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+### VS Сode ###
 .vscode/
 
 ### Mac OS ###
