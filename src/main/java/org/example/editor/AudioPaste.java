@@ -8,3 +8,4 @@ public class AudioPaste implements Editor{
 
     }
 }
+/*AudioPaste*/

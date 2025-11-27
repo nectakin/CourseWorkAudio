@@ -21,3 +21,4 @@ public class Logger {
         eventManager.notifySubscribers("openFile");
     }
 }
+/*Logger*/

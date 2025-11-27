@@ -14,3 +14,4 @@ public class UIElement implements UIComponent {
         component.repaint();
     }
 }
+/*UIElement*/
